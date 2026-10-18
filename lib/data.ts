@@ -235,16 +235,24 @@ export const education = [
     period: "2019 — 2023",
     detail: "CGPA 8.2 / 10",
   },
-  {
-    degree: "Class XII (HSC)",
-    school: "SBIOA Model Matric Higher Secondary School, Mogappair, Chennai",
-    period: "2019",
-    detail: "66%",
-  },
-  {
-    degree: "Class X (SSLC)",
-    school: "SBIOA Model Matric Higher Secondary School, Mogappair, Chennai",
-    period: "2017",
-    detail: "82%",
-  },
 ];
+
+// Drives both the hero's 3D ledger and the marquee ticker — every block in the
+// chain is a real piece of shipped work, not filler.
+export const ledgerFeed = [
+  "Piwallet — key management",
+  "UnicoinDCX — order API",
+  "Aptos Paymaster shipped",
+  "Fabric MSP access control",
+  "Supra Paymaster shipped",
+  "ERC-1155 contract deployed",
+  "Mini-Dex swap logic",
+  "Soulbound NFT batch transfer",
+];
+
+export const GENESIS_HEIGHT = 731;
+
+// Blocks held in the hero's visible chain. The scene and the text readout both
+// derive block heights from this, so the number on a cube's face always matches
+// the number in the panel beside it.
+export const CHAIN_DEPTH = 8;

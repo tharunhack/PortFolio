@@ -8,7 +8,9 @@ export default function Education() {
           <h2 className="font-display text-3xl md:text-4xl font-semibold text-paper">Education</h2>
         </div>
 
-        <div className="grid sm:grid-cols-3 gap-6">
+        {/* Auto-fit so a single entry sits at a readable width instead of being
+            stranded in a third of the row. */}
+        <div className="grid gap-6 sm:grid-cols-[repeat(auto-fit,minmax(16rem,22rem))]">
           {education.map((ed) => (
             <div key={ed.degree} className="border-t border-line pt-5">
               <span className="font-mono text-xs text-mutedDark">{ed.period}</span>

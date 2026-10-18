@@ -48,3 +48,45 @@ button:focus-visible {
     scroll-behavior: auto !important;
   }
 }
+
+/* --- Tilt panels -------------------------------------------------------- */
+/* The sheen rides the pointer; the transform is written by TiltCard itself. */
+.tilt-card {
+  --mx: 50%;
+  --my: 50%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 450ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 200ms ease, background-color 200ms ease;
+  will-change: auto;
+}
+
+.tilt-card:hover {
+  will-change: transform;
+}
+
+.tilt-sheen {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 300ms ease;
+  background: radial-gradient(
+    380px circle at var(--mx) var(--my),
+    rgba(216, 169, 69, 0.13),
+    transparent 62%
+  );
+}
+
+.tilt-card:hover .tilt-sheen,
+.tilt-card:focus-visible .tilt-sheen {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tilt-card {
+    transform: none !important;
+    transition: border-color 200ms ease, background-color 200ms ease;
+  }
+}
